@@ -1,0 +1,12 @@
+# Dependencies / build artifacts
+node_modules/
+build/
+target/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS
+*.swp
+.DS_Store

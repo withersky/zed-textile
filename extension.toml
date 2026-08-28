@@ -1,0 +1,11 @@
+id = "textile"
+name = "Textile"
+version = "0.1.0"
+schema_version = 1
+authors = ["withersky"]
+description = "Textile markup language support for Zed"
+repository = "file:///home/n.voroshilov@corp.nt.ru/textile-zed/vendor/tree-sitter-textile"
+
+[grammars.textile]
+repository = "https://github.com/arakkkkk/tree-sitter-textile"
+rev = "dd904f530ac1483067be3fb53d06b4f3cc0281c6"

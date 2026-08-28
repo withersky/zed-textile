@@ -1,0 +1,26 @@
+h1. Textile Test Document
+
+Intro paragraph with some *bold* and _italic_ inline markup.
+
+h2. Features
+
+* First item
+** Nested item
+*** Deep item
+* Second item
+
+h3. Code example
+
+<pre>
+fn main() {
+    println!("hello");
+}
+</pre>
+
+p(. A paragraph with a class.
+
+h4. Lists and more
+
+* one
+* two
+* three
