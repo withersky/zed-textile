@@ -1,0 +1,4 @@
+name = "Textile"
+grammar = "textile"
+path_suffixes = ["textile"]
+tab_size = 2
