@@ -1,11 +1,11 @@
-# Textile for Zed
+# Textile для Zed
 
-[Textile](https://textile-lang.org/) markup language support for the [Zed](https://zed.dev/) editor.
+Поддержка языка разметки [Textile](https://textile-lang.org/) для редактора [Zed](https://zed.dev/).
 
-## Features
+## Возможности
 
-- Syntax highlighting for headings (`h1.` – `h6.`), lists, paragraphs, and code blocks (`<pre>`, `bc.`, `pre.`)
-- Inline markup support:
+- Подсветка синтаксиса для заголовков (`h1.` – `h6.`), списков, параграфов и блоков кода (`<pre>`, `bc.`, `pre.`)
+- Поддержка строчной разметки:
   - `*strong*` / `**bold**`
   - `_emphasis_` / `__italic__`
   - `@inline code@`
@@ -15,41 +15,35 @@
   - `~subscript~`
   - `"link text":url`
   - `!image.png!`
-- Tree-sitter based outline (document symbols) via headings
-- Code action: "Insert Table of Contents" (requires the bundled LSP)
+- Структура документа (символы) через tree-sitter на основе заголовков
 
-## Installation
+## Установка
 
-### From Zed extensions
+### Из магазина расширений Zed
 
-Open Zed → Extensions → search for **Textile** → Install.
+Откройте Zed → Extensions → найдите **Textile** → Установите.
 
-### Local development
+### Локальная разработка
 
-1. Clone this repository
-2. Open the `zed-textile` folder in Zed
-3. Run `zed: install dev extension` from the command palette
+1. Клонируйте репозиторий в директорию расширений Zed:
 
-## LSP (Optional)
+   ```sh
+   git clone https://github.com/withersky/zed-textile.git ~/.local/zed.app/extensions/zed-textile
+   ```
 
-A minimal LSP server (`tools/textile_lsp.py`) provides a **Insert Table of Contents** code action.
+2. Откройте папку в Zed:
 
-Configure in your Zed settings:
+   ```sh
+   zed ~/.local/zed.app/extensions/zed-textile
+   ```
 
-```json
-{
-  "lsp": {
-    "textile-lsp": {
-      "binary": {
-        "path": "/usr/bin/python3",
-        "arguments": ["/absolute/path/to/tools/textile_lsp.py"]
-      }
-    }
-  }
-}
-```
+3. Выполните команду `zed: install dev extension` из палитры команд
 
-## Rebuilding the grammar
+> **Примечание:** Исходники расширения хранятся в `~/.local/zed.app/extensions/`. Команда `install dev extension` создаёт симлинк из стандартной директории расширений Zed (`~/.local/share/zed/extensions/installed/`) на эту папку.
+
+> **Примечание:** Генерация оглавления вынесена в отдельное расширение — [Auto TOC](https://github.com/withersky/zed-auto-toc).
+
+## Пересборка грамматики
 
 ```sh
 cd grammars/textile
@@ -59,6 +53,6 @@ npm install
 cp tree-sitter-textile.wasm ../textile.wasm
 ```
 
-## License
+## Лицензия
 
 MIT
