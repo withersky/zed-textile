@@ -2,6 +2,20 @@ h1. Textile Test Document
 
 Intro paragraph with some *bold* and _italic_ inline markup.
 
+h2. Inline Markup
+
+This is *strong text* and this is _emphasized text_.
+
+Here is *_bold and italic_* text together.
+
+Inline code: @console.log("hello")@
+
+Inserted: +new text+ and deleted: -old text-.
+
+Superscript: E = mc^2^ and subscript: H~2~O.
+
+A "link to Zed":https://zed.dev and an image: !logo.png!
+
 h2. Features
 
 * First item
@@ -16,6 +30,16 @@ fn main() {
     println!("hello");
 }
 </pre>
+
+Textile code block:
+
+bc. function hello() {
+  return "world";
+}
+
+Another code style:
+
+pre. This is preformatted text.
 
 p(. A paragraph with a class.
 
