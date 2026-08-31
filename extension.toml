@@ -4,8 +4,8 @@ version = "0.1.0"
 schema_version = 1
 authors = ["withersky"]
 description = "Textile markup language support for Zed"
-repository = "https://github.com/withersky/textile-zed"
+repository = "https://github.com/withersky/zed-textile"
 
 [grammars.textile]
-repository = "https://github.com/arakkkkk/tree-sitter-textile"
-rev = "dd904f530ac1483067be3fb53d06b4f3cc0281c6"
+repository = "https://github.com/withersky/zed-textile.git"
+rev = "bcec55bbca9e82a701022b361d01d97fc38388b2"

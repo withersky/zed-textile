@@ -7,6 +7,8 @@ target/
 __pycache__/
 *.pyc
 
+grammars/textile/
+
 # Editor / OS
 *.swp
 .DS_Store
