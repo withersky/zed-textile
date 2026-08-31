@@ -1,6 +1,6 @@
 # Textile для Zed
 
-Поддержка языка разметки [Textile](https://textile-lang.org/) для редактора [Zed](https://zed.dev/).
+Единое расширение для редактора [Zed](https://zed.dev/): поддержка языка разметки [Textile](https://textile-lang.org/) + умные действия с кодом для **Markdown** и **Textile**.
 
 ## Возможности
 
@@ -16,6 +16,9 @@
   - `"link text":url`
   - `!image.png!`
 - Структура документа (символы) через tree-sitter на основе заголовков
+- **Действия с кодом** (ПКМ → *Показать действия с кодом*) для файлов `.md` и `.textile`:
+  - **Вставить оглавление** — генерирует вложенное оглавление из заголовков
+  - **Выровнять таблицы** — выравнивает колонки таблиц по ширине
 
 ## Установка
 
@@ -41,7 +44,32 @@
 
 > **Примечание:** Исходники расширения хранятся в `~/.local/zed.app/extensions/`. Команда `install dev extension` создаёт симлинк из стандартной директории расширений Zed (`~/.local/share/zed/extensions/installed/`) на эту папку.
 
-> **Примечание:** Генерация оглавления вынесена в отдельное расширение — [Auto TOC](https://github.com/withersky/zed-auto-toc).
+### Действия с кодом (LSP)
+
+Действия с кодом предоставляет LSP-сервер `tools/auto_lsp.py`. Добавьте в свой `~/.config/zed/settings.json`:
+
+```json
+{
+  "lsp": {
+    "auto-tools": {
+      "binary": {
+        "path": "python3",
+        "arguments": ["~/.local/zed.app/extensions/zed-textile/tools/auto_lsp.py"]
+      }
+    }
+  },
+  "languages": {
+    "Markdown": {
+      "language_servers": ["auto-tools", "markdown-1", "markdown-0"]
+    },
+    "Textile": {
+      "language_servers": ["auto-tools"]
+    }
+  }
+}
+```
+
+После перезапуска Zed откройте `.md` или `.textile` файл, нажмите правой кнопкой мыши → **Показать действия с кодом** и выберите нужное действие.
 
 ## Пересборка грамматики
 

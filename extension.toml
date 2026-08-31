@@ -1,9 +1,9 @@
 id = "textile"
 name = "Textile"
-version = "0.1.0"
+version = "0.2.0"
 schema_version = 1
 authors = ["withersky"]
-description = "Textile markup language support for Zed"
+description = "Textile markup language support for Zed with code actions (table of contents, table formatting) for Textile and Markdown"
 repository = "https://github.com/withersky/zed-textile"
 
 [grammars.textile]
