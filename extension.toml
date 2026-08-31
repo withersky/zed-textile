@@ -1,6 +1,6 @@
 id = "textile"
 name = "Textile"
-version = "0.2.0"
+version = "0.3.0"
 schema_version = 1
 authors = ["withersky"]
 description = "Textile markup language support for Zed with code actions (table of contents, table formatting) for Textile and Markdown"
@@ -9,3 +9,7 @@ repository = "https://github.com/withersky/zed-textile"
 [grammars.textile]
 repository = "https://github.com/withersky/zed-textile.git"
 rev = "f2eaf30958a1c5b87645cbe543a35804e1aef399"
+
+[language_servers.auto-tools]
+name = "Auto Tools LSP"
+languages = ["Textile", "Markdown"]

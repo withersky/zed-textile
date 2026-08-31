@@ -46,30 +46,18 @@
 
 ### Действия с кодом (LSP)
 
-Действия с кодом предоставляет LSP-сервер `tools/auto_lsp.py`. Добавьте в свой `~/.config/zed/settings.json`:
+Действия с кодом предоставляет встроенный LSP-сервер (скрипт `tools/auto_lsp.py`), который расширение регистрирует само через WASM-адаптер (`extension.wasm`) — **никаких правок в `settings.json` не требуется**.
 
-```json
-{
-  "lsp": {
-    "auto-tools": {
-      "binary": {
-        "path": "python3",
-        "arguments": ["~/.local/zed.app/extensions/zed-textile/tools/auto_lsp.py"]
-      }
-    }
-  },
-  "languages": {
-    "Markdown": {
-      "language_servers": ["auto-tools", "markdown-1", "markdown-0"]
-    },
-    "Textile": {
-      "language_servers": ["auto-tools"]
-    }
-  }
-}
+После установки/перезапуска Zed откройте `.md` или `.textile` файл, нажмите правой кнопкой мыши → **Показать действия с кодом** и выберите нужное действие.
+
+## Пересборка WASM-адаптера
+
+Если меняли Rust-код адаптера (`src/lib.rs`):
+
+```sh
+cargo build --release --target wasm32-wasip2
+cp target/wasm32-wasip2/release/zed_textile.wasm extension.wasm
 ```
-
-После перезапуска Zed откройте `.md` или `.textile` файл, нажмите правой кнопкой мыши → **Показать действия с кодом** и выберите нужное действие.
 
 ## Пересборка грамматики
 
