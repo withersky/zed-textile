@@ -16,12 +16,26 @@ Superscript: E = mc^2^ and subscript: H~2~O.
 
 A "link to Zed":https://zed.dev and an image: !logo.png!
 
+Inline style: %{color:red}red text% and plain %text%.
+
+Abbreviation: HTML(HyperText Markup Language) is fun.
+
+Footnote reference: see [1] below.
+
+Auto links: visit https://zed.dev and mail someone@example.com.
+
+Macro: {{hello_world}} is a macro.
+
 h2. Features
 
 * First item
 ** Nested item
 *** Deep item
 * Second item
+
+# Numbered one
+## Numbered nested
+# Numbered two
 
 h3. Code example
 
@@ -30,6 +44,10 @@ fn main() {
     println!("hello");
 }
 </pre>
+
+<pre><code class="shell">
+  echo Test!
+</code></pre>
 
 Textile code block:
 
@@ -41,10 +59,40 @@ Another code style:
 
 pre. This is preformatted text.
 
-p(. A paragraph with a class.
+h4. Paragraph attributes
 
-h4. Lists and more
+p(. A paragraph with a left indent.
 
-* one
-* two
-* three
+p>. A right-aligned paragraph.
+
+p=. A centered paragraph.
+
+p#myid. A paragraph with an id.
+
+p.myclass. A paragraph with a class.
+
+p{color:blue}. A paragraph with a style.
+
+h4. Tables
+
+|_. Header 1|_. Header 2|
+|cell 1|cell 2|
+|_highlight|normal|
+
+h4. Blockquotes
+
+bq. This is a blockquote paragraph.
+
+> This is a line quote.
+
+>> This is a nested line quote.
+
+h4. Footnotes
+
+fn1. This is footnote one.
+
+h4. Horizontal rule
+
+----
+
+p(style). The end.

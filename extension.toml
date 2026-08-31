@@ -8,4 +8,4 @@ repository = "https://github.com/withersky/zed-textile"
 
 [grammars.textile]
 repository = "https://github.com/withersky/zed-textile.git"
-rev = "bcec55bbca9e82a701022b361d01d97fc38388b2"
+rev = "f2eaf30958a1c5b87645cbe543a35804e1aef399"
