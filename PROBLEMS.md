@@ -24,6 +24,17 @@
 
 Грамматика сгенерирована (`tree-sitter generate`), WASM собран (`tree-sitter build --wasm`).
 
+### 1.3. Подсветка не работала из-за field-ссылок в `highlights.scm` ✅
+**Причина:** Zed использует web-tree-sitter v0.24.5, который не принимает field-ссылки вида `(heading_content: (inline) ...)` в запросах, хотя поле `heading_content` существует в wasm. Ошибка: `Invalid node type "heading_content"`.
+
+**Решение:** переписаны все запросы без field-ссылок, с использованием `(inline)` напрямую через `.` (якорь смежности):
+```
+(document
+  (atx_h1_marker)
+  .
+  (inline) @markup.heading.1)
+```
+
 ## 2. Подсветка (highlighting) ✅
 
 Оба `highlights.scm` обновлены с использованием стандартных имён захватов Zed:
@@ -52,3 +63,4 @@
 4. [x] Расширить `code_block` на `bc.`/`pre.`
 5. [x] Удалить `vendor/`, `*.back`, добавить `LICENSE`/`README.md`
 6. [x] Проверить `outline.scm` на реальном файле
+7. [x] Исправить ошибку `Invalid node type "heading_content"` — убрать field-ссылки из запросов

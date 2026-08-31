@@ -2,6 +2,8 @@
 ; Standard capture names: @markup.*, @punctuation.*
 
 ; ─── Headings ───
+; Using (inline) node with . anchor instead of field refs
+; to avoid "Invalid node type" with field references
 (atx_h1_marker) @punctuation.special
 (atx_h2_marker) @punctuation.special
 (atx_h3_marker) @punctuation.special
@@ -9,23 +11,35 @@
 (atx_h5_marker) @punctuation.special
 (atx_h6_marker) @punctuation.special
 
-(atx_h1_marker) @_m
-(heading_content: (inline) @markup.heading.1)
+(document
+  (atx_h1_marker)
+  .
+  (inline) @markup.heading.1)
 
-(atx_h2_marker) @_m
-(heading_content: (inline) @markup.heading.2)
+(document
+  (atx_h2_marker)
+  .
+  (inline) @markup.heading.2)
 
-(atx_h3_marker) @_m
-(heading_content: (inline) @markup.heading.3)
+(document
+  (atx_h3_marker)
+  .
+  (inline) @markup.heading.3)
 
-(atx_h4_marker) @_m
-(heading_content: (inline) @markup.heading.4)
+(document
+  (atx_h4_marker)
+  .
+  (inline) @markup.heading.4)
 
-(atx_h5_marker) @_m
-(heading_content: (inline) @markup.heading.5)
+(document
+  (atx_h5_marker)
+  .
+  (inline) @markup.heading.5)
 
-(atx_h6_marker) @_m
-(heading_content: (inline) @markup.heading.6)
+(document
+  (atx_h6_marker)
+  .
+  (inline) @markup.heading.6)
 
 ; ─── Lists ───
 (list_marker) @punctuation.special
