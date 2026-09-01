@@ -67,7 +67,7 @@ if [ ! -f extension.wasm ]; then
 fi
 
 # --- Сборка чистой папки ------------------------------------------------------
-STAGE="dist/zed-textile-$VERSION"
+STAGE="dist/zed-textile"
 rm -rf "$STAGE"
 mkdir -p "$STAGE/grammars" "$STAGE/languages" "$STAGE/tools"
 
@@ -96,11 +96,11 @@ copy_file LICENSE
 
 # --- Архивы -------------------------------------------------------------------
 if [ "$DO_ARCHIVE" -eq 1 ]; then
-    (cd dist && tar -czf "zed-textile-$VERSION.tar.gz" "zed-textile-$VERSION")
+    (cd dist && tar -czf "zed-textile-$VERSION.tar.gz" "zed-textile")
     echo ">> Создан архив: dist/zed-textile-$VERSION.tar.gz"
 
     if command -v zip >/dev/null 2>&1; then
-        (cd dist && zip -qr "zed-textile-$VERSION.zip" "zed-textile-$VERSION")
+        (cd dist && zip -qr "zed-textile-$VERSION.zip" "zed-textile")
         echo ">> Создан архив: dist/zed-textile-$VERSION.zip"
     fi
 fi
