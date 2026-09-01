@@ -12,3 +12,4 @@ grammars/textile/
 # Editor / OS
 *.swp
 .DS_Store
+dist/
